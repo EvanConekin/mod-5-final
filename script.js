@@ -1,6 +1,6 @@
 // data    http://www.omdbapi.com/?apikey=bbf6414c&s
 // posters http://img.omdbapi.com/?apikey=bbf6414c&
-
+// ten cards: remove marvel for search API: https://www.omdbapi.com/?apikey=bbf6414c&s=marvel
 //display mvoie example:
 function displayMovies(movies) {
     const movieResuts = movie.map((movie) => {
