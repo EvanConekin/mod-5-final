@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>/Mod-5-final-Evan></title>
+    <title>Mod-5-final-Evan></title>
     <link rel="stylesheet" href="./style.css">
     <script src="script.js"defer></script>
     <script src="https://kit.fontawesome.com/b4ade9c213.js" crossorigin="anonymous"></script>
@@ -18,14 +18,35 @@
         <form class="search-form" id="searchForm">
             <div class="search-form__group">
                 <input class="search-form__input" type="text" id="searchInput" placeholder="Search Movies..." required>
-<button class="search-form__button" type "submit" aria-label="Search">
+<button class="search-form__button" type ="submit" aria-label="Search">
 <i class="fa-sharp fa-light fa-magnifying-glass"></i>
 </button>
             </div>
         </form>
     </nav>
     <main>
+        <div class="controls">
+            <p id="resultsInfo" class="resultsInfo">
+                <span>Showing:</span>
+                Marvel
+            </p>
         
+
+        <label for="sortSelect">Sort:</label>
+        <select id="sortSelect">
+            <option value="default">Default</option>
+            <option value="a-z">A - Z</option>
+            <option value="z-a">Z - A</option>
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+        </select>
+        </div>
+    </div>
+
+    
     </main>
+    <footer>
+        <p>Created by Simplified.org. Powered by OMDDapi. </p>
+    </footer>
 </body>
 </html>
