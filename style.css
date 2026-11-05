@@ -244,6 +244,7 @@ main {
 
 /* Skeleton Loading */
 
+
 #showSkeleton {
  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -251,8 +252,9 @@ main {
   max-width: 1200px;
   justify-content: center;
   margin: -20px auto;
-
 }
+
+
 .movie-card--skeleton {
   background: #e0e0e0;
   width: 100%;

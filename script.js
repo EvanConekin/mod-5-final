@@ -8,7 +8,7 @@ const searchInput = document.querySelector(`#searchInput`);
 const moviesGrid = document.querySelector(`#moviesGrid`);
 const resultsInfo = document.querySelector(`#resultsInfo`);
 const sortSelect = document.querySelector(`#sortSelect`);
-//const showSkeletons = document.querySelector(`#showSkeletons`);
+//const showSkeleton = document.querySelector(`#showSkeleton`);
 let currentMovies = [];
 
 searchForm.addEventListener('submit', (e) => {
@@ -26,9 +26,9 @@ function showSkeletons() {
                 <p class="movie-card__year--skeleton"></p>
             </div>`).join('');
 
+
+moviesGrid.innerHTML = skeletons
 }
-
-
 async function fetchMovies(searchTerm) {
     showSkeletons(); 
     const res = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${searchTerm}`);
@@ -47,28 +47,23 @@ else {
    
 }
 }
- function displayMovies(movies) {
-    const movieResults = movies.map((movie) => {
-//const poster = movie.Poster  !== 'N/A' ? 'movie.Poster' : '';
-//${poster ?
-  `<div class="movie-card">
-    <img class="movie-card__img" src= "${poster}" alt= "${movie.Title}"> : '';
-                <h2 class="movie-card__title">"${movie.Title}"</h2>
-                <p class="movie-card__year">"${movie.Year}"</p>
-            </div> `}
+function displayMovies(movies) {
+  moviesGrid.innerHTML = movies.map((movie) => `
+    <div class="movie-card">
+      <img class="movie-card__img" src="${movie.Poster}" alt="${movie.Title}">
+      <h2 class="movie-card__title">${movie.Title}</h2>
+      <p class="movie-card__year">${movie.Year}</p>
+    </div>`).join('');
 
-    )}.join('');
-    moviesGrid.innerHTML= movieResults;
- 
- moviesGrid.querySelectorAll(`movie-card__img`).forEach(img => {
+  moviesGrid.querySelectorAll('.movie-card__img').forEach(img => {
     img.addEventListener('error', () => {
-        const placeholder = document.createElement('div');
-        placeholder.className = 'movie-card__poster-placeholder';
-        placeholder.innerHTML = 'Movie Poster <br> Not Available';
-        img.replaceWith(placeholder);
-    })
- })
-
+      const placeholder = document.createElement('div');
+      placeholder.className = 'movie-card__poster-placeholder';
+      placeholder.innerHTML = 'Movie Poster <br> Not Available';
+      img.replaceWith(placeholder);
+    });
+  });
+} 
 
 sortSelect.addEventListener('change', (e) => {
     sortMovies(e.target.value);
@@ -76,11 +71,11 @@ sortSelect.addEventListener('change', (e) => {
 function sortMovies(sortType) {
     let sortedMovies = [...currentMovies];
 
-    if(sortType === 'a-z') {
-        sortedMovies.sort((a, b) => a.Title.localCompare(b.Title));
+    if(sortType === 'A - Z') {
+        sortedMovies.sort((a, b) => a.Title.localeCompare(b.Title));
     }
-    else if(sortType === 'z-a') {
-    sortedMovies.sort((a, b) => b.Title.localCompare(a.Title));
+    else if(sortType === 'Z - A') {
+    sortedMovies.sort((a, b) => b.Title.localeCompare(a.Title));
         }
      else if(sortType === 'newest') {
             sortedMovies.sort((a, b) => Number(b.Year) - Number(a.Year));
