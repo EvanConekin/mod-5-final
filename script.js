@@ -27,7 +27,7 @@ function showSkeletons() {
             </div>`).join('');
 
 
-moviesGrid.innerHTML = skeletons
+moviesGrid.innerHTML = skeletons;
 }
 async function fetchMovies(searchTerm) {
     showSkeletons(); 
@@ -71,10 +71,10 @@ sortSelect.addEventListener('change', (e) => {
 function sortMovies(sortType) {
     let sortedMovies = [...currentMovies];
 
-    if(sortType === 'A - Z') {
+    if(sortType === 'a-z') {
         sortedMovies.sort((a, b) => a.Title.localeCompare(b.Title));
     }
-    else if(sortType === 'Z - A') {
+    else if(sortType === 'z-a') {
     sortedMovies.sort((a, b) => b.Title.localeCompare(a.Title));
         }
      else if(sortType === 'newest') {
