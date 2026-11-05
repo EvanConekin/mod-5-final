@@ -8,7 +8,7 @@ const searchInput = document.querySelector(`#searchInput`);
 const moviesGrid = document.querySelector(`#moviesGrid`);
 const resultsInfo = document.querySelector(`#resultsInfo`);
 const sortSelect = document.querySelector(`#sortSelect`);
-//const showSkeletons = document.querySelector(`#showSkeletons`);???
+//const showSkeletons = document.querySelector(`#showSkeletons`);
 let currentMovies = [];
 
 searchForm.addEventListener('submit', (e) => {
@@ -49,15 +49,15 @@ else {
 }
  function displayMovies(movies) {
     const movieResults = movies.map((movie) => {
-const poster = movie.Poster  !== 'N/A' ? 'movie.Poster' : '';
-
- return `<div class="movie-card">
- ${poster ? `<img class="movie-card__img" src= "${poster}" alt= "${movie.Title}">` : ''}
+//const poster = movie.Poster  !== 'N/A' ? 'movie.Poster' : '';
+//${poster ?
+  `<div class="movie-card">
+    <img class="movie-card__img" src= "${poster}" alt= "${movie.Title}"> : '';
                 <h2 class="movie-card__title">"${movie.Title}"</h2>
                 <p class="movie-card__year">"${movie.Year}"</p>
-            </div> `
+            </div> `}
 
-    }).join('');
+    )}.join('');
     moviesGrid.innerHTML= movieResults;
  
  moviesGrid.querySelectorAll(`movie-card__img`).forEach(img => {
@@ -68,7 +68,7 @@ const poster = movie.Poster  !== 'N/A' ? 'movie.Poster' : '';
         img.replaceWith(placeholder);
     })
  })
-}
+
 
 sortSelect.addEventListener('change', (e) => {
     sortMovies(e.target.value);
