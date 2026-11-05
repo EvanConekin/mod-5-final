@@ -47,7 +47,8 @@ nav {
 }
 
 /* Shimmer sweep on nav while the search input is hovered */
-/* this is needed to add the nav animation below */
+/* this is needed to add the nav animation below
+very cool! */
 
 nav:has(.search-form__input:hover) {
   --nav-angle: 184deg;
@@ -207,12 +208,14 @@ main {
 }
 
 .movie-card__title {
-  font-size: 16px;
-  margin: 10px 0 5px 0;
+  font-size: 14px;
+  margin: 10px 0 5px;
 }
 
 .movie-card__year {
-  margin: 0;
+
+  font-size: 14px;
+  margin: 10px;
   color: #666;
 }
 
@@ -258,16 +261,17 @@ main {
 .movie-card__title--skeleton {
   height: 20px;
   background: #e0e0e0;
-  margin: 10px 0 5px 0;
+  margin: 10px 0 10px 0;
   width: 80%;
 }
 
 .movie-card__year--skeleton {
+  margin: 10px;
   height: 16px;
   background: #e0e0e0;
   width: 40%;
 }
-
+/* utilize for skeleton loading upon submit ot by sort? */
 @keyframes shimmer {
   0% {
     background-position: -200% 0;
