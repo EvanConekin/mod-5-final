@@ -271,7 +271,7 @@ main {
   background: #e0e0e0;
   width: 40%;
 }
-/* utilize for skeleton loading upon submit ot by sort? */
+/* utilize for skeleton loading upon submit or by sort? animation is in movie card image */
 @keyframes shimmer {
   0% {
     background-position: -200% 0;

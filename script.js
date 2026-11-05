@@ -8,7 +8,7 @@ const searchInput = document.querySelector(`#searchInput`);
 const moviesGrid = document.querySelector(`#moviesGrid`);
 const resultsInfo = document.querySelector(`#resultsInfo`);
 const sortSelect = document.querySelector(`#sortSelect`);
-//const showSkeletons = document.querySelector(`#showSkeletons`);
+//const showSkeletons = document.querySelector(`#showSkeletons`);???
 let currentMovies = [];
 
 searchForm.addEventListener('submit', (e) => {
